@@ -1,5 +1,8 @@
 import './App.css';
+import { Button } from './components/Button';
 import { Greet } from './components/Greeting';
+import { Heading } from './components/Heading';
+import { Oscar } from './components/Oscar';
 import { Person } from './components/Person';
 import { PersonList } from './components/PersonList';
 import { Status } from './components/Status';
@@ -28,10 +31,19 @@ function App() {
 
   return (
     <div className="App">
-      <Greet name={personName} messageCounts={50} isLoggedIn={false} />
+      <Greet name={personName} isLoggedIn={true} />
+      <Button handleClick={(event, id) => {
+        console.log('hello', event, id);
+      }} />
       <Person name={personName} />
-      <PersonList names={personList}/>
-      <Status status='success'/>
+      <PersonList names={personList} />
+      <Status status='success' />
+      <Heading>Placeholder input</Heading>
+      <Oscar>
+        <Heading>
+          Oscar goes to Leonardo Dicpario
+        </Heading>
+      </Oscar>
     </div>
   );
 }
